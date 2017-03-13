@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= title %></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Source+Sans+Pro:300" rel="stylesheet">
+
+<nav class="navbar navbar-basis navbar-fixed-top">
+    <div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="http://disputebills.com"><img src="" alt="Workspace">
+        </a>
+		</div>
+		<div class="collapse navbar-collapse" id="navbar">
+			<ul class="nav navbar-nav navbar-left">
+				<li class="dropdown">
+				  <% if user_signed_in? %>
+			 	<li class="active"><%= link_to "Post Review", new_review_path %></li>
+			 	<li class="active"><%= link_to current_user.username, user_path(current_user) %></li>
+			 	<li class="active"><%= link_to "Settings", edit_user_registration_path %></li>
+				<li class="active"><%= link_to "Logout", destroy_user_session_path, method: :delete %><span class="sr-only">(current)</span></a></li>
+				<% else %>
+				<li class="active"><%= link_to "Sign Up", new_user_registration_path %><span class="sr-only">(current)</span></a></li>
+				<li class="active"><%= link_to "Log In", new_user_session_path %><span class="sr-only">(current)</span></a></li>
+				<% end %>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Explore <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#">Geri bildirim</a></li>
+						<li><a href="#">Yardım</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Ayarlar</a></li>
+						<li><a href="#exit">Çıkış yap</a></li>
+					</ul>
+				</li>
+			</ul>
+			<form class="navbar-form navbar-left search-form" role="search">
+				<input type="text" class="form-control" placeholder="Search" />
+			</form>
+		</div>
+	</div>
+</nav>
+</head>
+
+
+<body>
+
+			<% if notice %>
+			<div class="container alert-padding">
+			<div class="alert alert-info"><%= notice %></div>
+			</div>
+			<% end %>
+			
+			
+			<% if alert %>
+			<div class="container alert-padding">
+			<div class="alert alert-warning"><%= alert %></div>
+			</div>
+			<% end %>
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<div class="container review-show-padding" id="sidenav">
+  <div class="row">
+    <div class="col-xs-12" data-spy="affix">
+    
+      <%= render "content" %>
+      <%= render_like_conditionally %>
+
+<span class="votes-count" data-id="<%= @review.id %>">
+<%= @review.get_likes.size %>
+</span>
+<br>
+            
+    </div>
+        <div class="col-xs-12 col-md-offset-6 col-md-6">
+        <% @review.photos.each do |photo| %>
+        <%= image_tag photo.file_name.url, :class => "img-responsive" %>
+        <% end %>
+    </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<% title @brand.label%>
+
+<div class="jumbotron backgrey">
+        <div class="container">
+    <h1><%= @brand.label %></h1>
+    <h5><%= @brand.introduction %></h5>
+        <% @brand.categories.each do |category| %>
+    <a href="" class="btn btn-main btn-sm" role="button"><%= category.item_type %></a>
+    <% end %>
+</div>
+</div>
+    
+
+    <div class="container">
+<div class="row">
+    <% @brand.reviews.each do |review| %>
+  <div class="col-sm-4">
+    <div class="thumbnail">
+      <img src="http://placehold.it/500x500/EEE">
+        <div class="caption">
+<h4>    <%= review.title %></h4>
+<p>  <%= review.description %></p>
+          <a href="#" class="btn btn-default btn-xs" role="button">Button</a>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  </div>
+</div>

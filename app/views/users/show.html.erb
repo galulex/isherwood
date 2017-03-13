@@ -1,0 +1,29 @@
+<% title @user.username %>
+
+<div class="jumbotron backgrey">
+        <div class="container">
+             <div class="col-xs-12 col-md-6">
+<h2><%= @user.first_name %> <%= @user.last_name %></h2>
+<h5>@<%= @user.username %></h5>
+<p><h5><%= @user.about %></h5></p>
+
+<%= render_follow_conditionally %>
+</div>
+</div></div>
+
+    <div class="container">
+<div class="row">
+    <% @user.reviews.each do |review| %>
+  <div class="col-sm-4">
+    <div class="thumbnail">
+  <%= image_tag review.first_photo %>
+        <div class="caption">
+<h4><%= link_to review.title, review %></h4>
+<p>  <%= review.description %></p>
+          <a href="#" class="btn btn-default btn-xs" role="button">Button</a>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  </div>
+</div>
