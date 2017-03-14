@@ -17,27 +17,34 @@
 	
     <div class = "container">
             
-    <h1>All Makeup Products</h1>
+    <h1>Makeup</h1>
     <hr>
 
 		<% @makeup.group_by(&:parent).each do |parent, categories| %>
-		<div class="col-md-3">
+		<div class="col-md-2">
 		<h4><%= parent.item_type if parent %></h4>
+		 <ul class="list-unstyled">
 		<% categories.each do |category| %>
-		<%= category.item_type %>
+		<li><%= link_to category.item_type, users_path %><li>
 		<% end %>
+		</ul>
 		</div>  
 		<% end %>
+			</div>
+			
+			    <div class = "container">
 
-    <h1>All Skincare Products</h1>
+    <h1>Skincare</h1>
     <hr>
 
 		<% @skincare.group_by(&:parent).each do |parent, categories| %>
-		<div class="col-md-3">
+		<div class="col-md-2">
 		<h4><%= parent.item_type if parent %></h4>
+		 <ul class="list-unstyled">
 		<% categories.each do |category| %>
-		<%= category.item_type %>
+		<li><%= link_to category.item_type, users_path %><li>
 		<% end %>
+		</ul>
 		</div>  
 		<% end %>
-		</div>  
+</div>
