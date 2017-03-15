@@ -1,16 +1,14 @@
 class BrandsController < ApplicationController
   def index
     @brands = Brand.all
-    featured_brand_ids = [1,2,5]
-    @featured_brands = Brand.find(featured_brand_ids)
   end
 
   def show
     @brand = Brand.find(params[:id])
-    @review = Review.find(params[:id])
+    @reviews =Review.find(params[:id])
   end
   
-    def new
+    def new  
     @brand = Brand.new
   end
 

@@ -31,5 +31,5 @@ end
   
   get "/pages/:page" => "pages#show"
 
-  root "brands#index"
+  root "reviews#index"
 end

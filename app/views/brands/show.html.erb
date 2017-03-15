@@ -11,19 +11,7 @@
 </div>
     
 
-    <div class="container">
-<div class="row">
-    <% @brand.reviews.each do |review| %>
-  <div class="col-sm-4">
-    <div class="thumbnail">
-      <img src="http://placehold.it/500x500/EEE">
-        <div class="caption">
-<h4>    <%= review.title %></h4>
-<p>  <%= review.description %></p>
-          <a href="#" class="btn btn-default btn-xs" role="button">Button</a>
-      </div>
-    </div>
-  </div>
-  <% end %>
-  </div>
-</div>
+
+
+<%= render "/reviews/card", reviews: @brand.reviews %>
+
