@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :brands
   
   resources :explore
+    resources :categories
   
   resources :users do
     member do
