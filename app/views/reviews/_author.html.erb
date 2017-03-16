@@ -1,19 +1,19 @@
 <div class="container review-show-padding" id="sidenav">
   <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2">
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
     <%= render "content" %>
-<br>
+    <br>
     <br>
     <div class="btn-group inline pull-left">
-    <button type="button" class="btn btn-main" data-toggle="modal" data-target="#myModal">Add Photos</button>
-    <%= button_to "Delete Review", @review, :method => :delete, class: "btn btn-main" %>
-    <%= button_to "Edit Review", edit_review_path, :method => :get, class: "btn btn-main" %>
+      <button type="button" class="btn btn-main" data-toggle="modal" data-target="#myModal">Add Photos</button>
+      <%= button_to "Delete Review", @review, :method => :delete, class: "btn btn-main" %>
+      <%= button_to "Edit Review", edit_review_path, :method => :get, class: "btn btn-main" %>
     </div>
     <hr>
     </div>
   </div>
 </div>
-    
+
 <div class="container" id="photos">
   <% @review.photos.each do |photo| %>
     <div class="col-xs-12 col-md-8 col-md-offset-2">

@@ -141,3 +141,51 @@ fieldset[disabled] .btn-explore.active {
   color: #FFFFFF; 
   background-color: #00C3BD; 
 }
+
+// btn-lakeside
+
+.btn-lakeside { 
+  color: #FFFFFF; 
+  background-color: #00C3BD; 
+  border-color: #00C3BD; 
+} 
+ 
+.btn-lakeside:hover, 
+.btn-lakeside:focus, 
+.btn-lakeside:active, 
+.btn-lakeside.active, 
+.open .dropdown-toggle.btn-lakeside { 
+  color: #FFFFFF; 
+  background-color: #10D1CB; 
+  border-color: #00C3BD; 
+} 
+ 
+.btn-lakeside:active, 
+.btn-lakeside.active, 
+.open .dropdown-toggle.btn-lakeside { 
+  background-image: none; 
+} 
+ 
+.btn-lakeside.disabled, 
+.btn-lakeside[disabled], 
+fieldset[disabled] .btn-lakeside, 
+.btn-lakeside.disabled:hover, 
+.btn-lakeside[disabled]:hover, 
+fieldset[disabled] .btn-lakeside:hover, 
+.btn-lakeside.disabled:focus, 
+.btn-lakeside[disabled]:focus, 
+fieldset[disabled] .btn-lakeside:focus, 
+.btn-lakeside.disabled:active, 
+.btn-lakeside[disabled]:active, 
+fieldset[disabled] .btn-lakeside:active, 
+.btn-lakeside.disabled.active, 
+.btn-lakeside[disabled].active, 
+fieldset[disabled] .btn-lakeside.active { 
+  background-color: #00C3BD; 
+  border-color: #00C3BD; 
+} 
+ 
+.btn-lakeside .badge { 
+  color: #00C3BD; 
+  background-color: #FFFFFF; 
+}
