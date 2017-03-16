@@ -2,11 +2,6 @@
   <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
     <%= render "content" %>
-<%= render_like_conditionally %>
-
-<span class="votes-count" data-id="<%= @review.id %>">
-<%= @review.get_likes.size %>
-</span>
 <br>
     <br>
     <div class="btn-group inline pull-left">
@@ -35,7 +30,16 @@
 <div class="comments-bg" id="comments">
   <div class= "container"> 
   <div class= "col-md-8 col-md-offset-2">
- <div class="comment_list">
+ <div class="review_footer">
+  <br>
+  <%= link_to @review.brand.label, @review.brand, :class => 'btn btn-sm btn-lake' %>
+  <br> <br>
+  <%= render_like_conditionally %>
+
+  <span class="votes-count" data-id="<%= @review.id %>">
+  <%= @review.get_likes.size %>
+  </span>
+
     <h1><%= render_comments_count %></h1>
     <% @comments.each do |comment| %>
             <hr>

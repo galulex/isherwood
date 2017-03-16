@@ -1,9 +1,10 @@
 <h1><%= @review.title %></h1>
+<br>
+    <h6><strong><%= link_to ("WRITTEN BY " + @review.user.username.upcase), @review.user %></strong></h6>
+    <p class="timeago"><%="#{time_ago_in_words(@review.created_at)} ago"%></p>
 <hr>
     <% if current_user %>
       <%= rating_for @review, "product", disable_after_rate: false, path: 'star_icons', cancel_place: 'right' %>
     <% end %>
     <br>
-<p><%= @review.description %></p>
-<p><%= @review.brand.label %></p>
-<p><strong>Written by <%= @review.user.first_name %> <%= @review.user.last_name %></strong></p>
+<p class="readscape"><%= @review.description %></p>
