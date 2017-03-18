@@ -45,7 +45,7 @@
     </div>
 
     <%= f.fields_for :photos do |photo| %>
-      <%= render 'photo_fields', f: photo  %>
+      <%= render 'photo_fields', f: photo, visible: true %>
     <% end %>
     <div class="field col-md-8">
       <%= link_to_add_association '+ Add photo', f, :photos, data: { new_photo: true } %>

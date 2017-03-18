@@ -3,6 +3,7 @@ $(document).on 'change', 'input[data-photo]', ->
   input = @
   reader.onload = (e) ->
     $(input).siblings('img').prop('src', e.target.result)
+    $(input).parents('.hidden').removeClass('hidden')
   reader.readAsDataURL(input.files[0])
 
 $ ->

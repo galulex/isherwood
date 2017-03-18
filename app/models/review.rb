@@ -5,7 +5,7 @@ class Review < ActiveRecord::Base
   has_many :photos
 
   accepts_nested_attributes_for :brand
-  accepts_nested_attributes_for :photos, allow_destroy: true, limit: 5
+  accepts_nested_attributes_for :photos, reject_if: :all_blank, allow_destroy: true, limit: 5
 
   validates :title, :description, :brand_id, :category_id, :photos, presence: true
 
