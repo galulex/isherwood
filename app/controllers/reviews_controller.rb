@@ -2,31 +2,31 @@ class ReviewsController < ApplicationController
 
   before_action :set_review, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
-  
+
   def like
-      @review = Review.find(params[:id])
-      @review.liked_by current_user
-      if request.xhr?
+    @review = Review.find(params[:id])
+    @review.liked_by current_user
+    if request.xhr?
       render json: { count: @review.get_likes.size, id: params[:id] }
-      else
-        redirect_to @review
-      end
-  end
-  
-  def dislike
-      @review = Review.find(params[:id])
-      @review.disliked_by current_user
-      if request.xhr?
-      render json: { count: @review.get_likes.size, id: params[:id] }
-      else
+    else
       redirect_to @review
     end
   end
-    
+
+  def dislike
+    @review = Review.find(params[:id])
+    @review.disliked_by current_user
+    if request.xhr?
+      render json: { count: @review.get_likes.size, id: params[:id] }
+    else
+      redirect_to @review
+    end
+  end
+
   def index
     @reviews = Review.all
     authorize @reviews
-    
+
     top_review_ids = [1,2,5]
     @top_reviews = Review.find(top_review_ids)
     favorite_review_ids = [8,2,5]
@@ -36,16 +36,17 @@ class ReviewsController < ApplicationController
   end
 
   def show
-     @comments = @review.comments.all
+    @comments = @review.comments.all
   end
-  
-   def new_comment
+
+  def new_comment
     review = Review.find_by(id: params[:id])
     comment = review.comments.build(comment_params)
   end
 
   def new
     @review = Review.new
+    @review.photos.build
     authorize @review
   end
 
@@ -55,8 +56,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(review_params)
-    @review.user_id = current_user.id
+    @review = current_user.reviews.build(review_params)
     authorize @review
 
     respond_to do |format|
@@ -89,18 +89,18 @@ class ReviewsController < ApplicationController
 
   private
 
-    def set_review
-      @review = Review.find(params[:id])
-      authorize @review
-    end
+  def set_review
+    @review = Review.find(params[:id])
+    authorize @review
+  end
 
-    def review_params
-      params.require(:review).permit(:title, :description, :brand_id)
-    end
-    
-    def comment_params
-      params.permit(:comment)
-    end
-    
+  def review_params
+    params.require(:review).permit(:title, :description, :brand_id, :category_id,
+                                  photos_attributes: [:file_name, :_destroy])
+  end
+
+  def comment_params
+    params.permit(:comment)
+  end
 end
 

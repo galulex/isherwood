@@ -1,0 +1,7 @@
+<div class="field col-md-8">
+  <figure class='photozone'>
+    <%= f.file_field :file_name, accept: 'image/*', data: { photo: true } %>
+    <%= f.hidden_field :file_name_cache %>
+    <%= image_tag f.object.file_name %>
+  </figure>
+</div>

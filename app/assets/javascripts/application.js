@@ -17,3 +17,4 @@
 //= require dropzone
 //= require selectize
 //= require_tree .
+//= require cocoon
