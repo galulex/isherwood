@@ -2,7 +2,7 @@ $(document).on 'change', 'input[data-photo]', ->
   reader = new FileReader()
   input = @
   reader.onload = (e) ->
-    $(input).parent().append("<img src='#{e.target.result}'>")
+    $(input).siblings('img').prop('src', e.target.result)
   reader.readAsDataURL(input.files[0])
 
 $ ->
