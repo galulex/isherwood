@@ -1,5 +1,5 @@
 .photozone {
-  margin: 20px 0;
+  margin: 20px 0 0 0;
   border: 3px #808284 dashed;
   max-height: 200px;
   height: 200px;
@@ -16,7 +16,7 @@
     right: 0;
     width: 100%;
     position: absolute;
-    z-index: 100;
+    z-index: 2;
   }
 
   img {

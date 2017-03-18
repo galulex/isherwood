@@ -4,4 +4,5 @@
     <%= f.hidden_field :file_name_cache %>
     <%= image_tag f.object.file_name %>
   </figure>
+  <%= link_to_remove_association 'Remove photo', f, wrapper_class: 'field', data: { remove_photo: true } %>
 </div>
