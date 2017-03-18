@@ -39,5 +39,10 @@
     <div class="field col-md-8">
 <%= f.collection_select(:brand_id, Brand.all, :id, :label, { :prompt => 'Select a Brand', :selected => @review.brand_id}, { class: 'brand-autocomplete' }) %>
   </div>
+  
+  <div class="field col-md-8">
+<%= f.collection_select(:category_id, Category.all, :id, :item_type, { :prompt => 'Select a Category', :selected => @review.category_id}, { class: 'brand-autocomplete' }) %>
+  </div>
+    
 <% end %>
 </div>
