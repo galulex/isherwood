@@ -48,7 +48,7 @@
       <%= render 'photo_fields', f: photo, visible: true %>
     <% end %>
     <div class="field col-md-8">
-      <%= link_to_add_association '+ Add photo', f, :photos, data: { new_photo: true } %>
+      <%= link_to_add_association '+ Add photo', f, :photos, data: { new_photo: true }, class: "#{'hidden' if @review.photos.size > 4}" %>
     </div>
   </div>
 <% end %>
