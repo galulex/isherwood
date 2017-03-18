@@ -96,7 +96,7 @@ class ReviewsController < ApplicationController
 
   def review_params
     params.require(:review).permit(:title, :description, :brand_id, :category_id,
-                                  photos_attributes: [:file_name, :_destroy])
+                                  photos_attributes: [:file_name, :file_name_cache, :_destroy])
   end
 
   def comment_params
