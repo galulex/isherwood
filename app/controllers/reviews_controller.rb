@@ -46,7 +46,6 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
-    @review.photos.build
     authorize @review
   end
 

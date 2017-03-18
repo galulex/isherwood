@@ -13,8 +13,7 @@ check_to_hide_or_show_add_link = ->
 
 $(document).on 'cocoon:after-insert', ->
   check_to_hide_or_show_add_link()
-  return
+  $('input[data-photo]:last').click()
 
 $(document).on 'cocoon:after-remove', ->
   check_to_hide_or_show_add_link()
-  return
