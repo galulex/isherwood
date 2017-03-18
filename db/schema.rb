@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170316083337) do
+ActiveRecord::Schema.define(version: 20170318022537) do
 
   create_table "average_caches", force: :cascade do |t|
     t.integer  "rater_id"
@@ -121,13 +121,6 @@ ActiveRecord::Schema.define(version: 20170316083337) do
 
   add_index "rating_caches", ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type"
 
-  create_table "review_categories", force: :cascade do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "review_id"
-    t.integer  "category_id"
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -135,9 +128,11 @@ ActiveRecord::Schema.define(version: 20170316083337) do
     t.text     "description"
     t.integer  "brand_id"
     t.integer  "user_id"
+    t.integer  "category_id"
   end
 
   add_index "reviews", ["brand_id"], name: "index_reviews_on_brand_id"
+  add_index "reviews", ["category_id"], name: "index_reviews_on_category_id"
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "users", force: :cascade do |t|
