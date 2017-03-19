@@ -15,7 +15,6 @@ gem 'pundit'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
-gem 'dropzonejs-rails'
 gem "selectize-rails"
 gem 'acts_as_votable', '~> 0.10.0'
 gem "acts_as_follower"
