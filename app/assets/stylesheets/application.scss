@@ -5,6 +5,7 @@
 @import "navbar";
 @import "buttons";
 @import "photos";
+@import "masonry/fluid";
 
 
 // start removing cards padding
@@ -299,4 +300,18 @@ background-image: linear-gradient(90deg, #F03141, #FE7A00);
 
 .follow-button {
     margin-top: 20px;
+}
+
+.reviewrow {
+ -moz-column-width: 22em;
+ -webkit-column-width: 22em;
+ -moz-column-gap: 1em;
+ -webkit-column-gap:1em; 
+  
+}
+
+.item {
+ display: inline-block;
+ padding:  .25rem;
+ width:  100%; 
 }

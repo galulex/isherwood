@@ -22,7 +22,7 @@ gem 'acts_as_commentable'
 gem 'ratyrate'
 gem 'acts_as_tree'
 gem 'cocoon'
-gem 'jquery-masonry-rails'
+gem 'masonry-rails'
 
 group :development, :test do
   gem 'byebug'
