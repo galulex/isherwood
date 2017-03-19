@@ -10,19 +10,19 @@ class UsersController < ApplicationController
   end
   
   def follow
-  @user = User.find(params[:id])
-
-  if current_user
-    if current_user == @user
-      flash[:error] = "You cannot follow yourself."
+    @user = User.find(params[:id])
+  
+    if current_user
+      if current_user == @user
+        flash[:error] = "You cannot follow yourself."
+      else
+        current_user.follow(@user)
+        flash[:notice] = "You are now following #{@user.username}."
+      end
     else
-      current_user.follow(@user)
-      flash[:notice] = "You are now following #{@user.username}."
+      flash[:error] = "You must <a href='/users/sign_in'>login</a> to follow #{@user.username}.".html_safe
     end
-  else
-    flash[:error] = "You must <a href='/users/sign_in'>login</a> to follow #{@user.username}.".html_safe
   end
-end
 
 def unfollow
   @user = User.find(params[:id])

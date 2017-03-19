@@ -4,7 +4,7 @@ def render_follow_conditionally
   if user_signed_in?
     follow_toggler 
     else
-    button_to "Follow", new_user_session_path, class: 'follow-button btn btn-lake'
+    button_to "Follow", new_user_session_path, class: 'follow-button btn btn-lake', remote: true
   end
 end
 
