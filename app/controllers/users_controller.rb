@@ -4,6 +4,11 @@ class UsersController < ApplicationController
     @reviews = @user.reviews
   end
   
+  def index
+    @users = User.all
+    render(json: @users, each_serializer: UserSerializer)
+  end
+  
   def follow
   @user = User.find(params[:id])
 

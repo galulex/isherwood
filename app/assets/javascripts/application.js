@@ -16,5 +16,6 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require selectize
+//= require jquery.atwho
 //= require_tree .
 //= require cocoon

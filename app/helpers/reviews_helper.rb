@@ -2,9 +2,9 @@ module ReviewsHelper
 
     def render_review_conditionally
         if @review.user == current_user 
-        render :partial => 'author'
+            render :partial => 'author'
         else 
-        render :partial => 'reader'
+            render :partial => 'reader'
         end 
     end
     

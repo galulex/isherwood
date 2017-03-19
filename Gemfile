@@ -23,6 +23,8 @@ gem 'ratyrate'
 gem 'acts_as_tree'
 gem 'cocoon'
 gem 'masonry-rails'
+gem 'jquery-atwho-rails'
+gem 'active_model_serializers', '~> 0.10.0'
 
 group :development, :test do
   gem 'byebug'
