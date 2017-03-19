@@ -47,10 +47,11 @@
     <%= f.fields_for :photos do |photo| %>
       <%= render 'photo_fields', f: photo, visible: true %>
     <% end %>
-    <div class="field col-md-8">
+    
+    <div class="field col-md-8 add-photo-button">
       <%= link_to_add_association f, :photos, data: { new_photo: true }, class: "#{'hidden' if @review.photos.size > 4} btn btn-lake" do %>
-      <i class="glyphicon glyphicon-camera"></i>
-<% end %>
+        <i class="glyphicon glyphicon-camera"></i>
+      <% end %>
     </div>
-  </div>
-<% end %>
+    </div>
+    <% end %>

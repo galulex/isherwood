@@ -198,6 +198,11 @@ padding-bottom: 50px;
     color: #00C3BD;
 }
 
+.glyphicon.glyphicon-remove {
+    font-size: 30px;
+    color: #00C3BD;
+}
+
 span.votes-count {
     font-size: 15px;
     position: relative;
@@ -302,16 +307,13 @@ background-image: linear-gradient(90deg, #F03141, #FE7A00);
     margin-top: 20px;
 }
 
-.reviewrow {
- -moz-column-width: 22em;
- -webkit-column-width: 22em;
- -moz-column-gap: 1em;
- -webkit-column-gap:1em; 
-  
+// add photos to reviews
+
+.add-photo-button {
+    margin-top: 30px;
+    padding-bottom: 30px;
 }
 
-.item {
- display: inline-block;
- padding:  .25rem;
- width:  100%; 
+.remove-photo-button {
+    margin-top: 10px;
 }
