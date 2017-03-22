@@ -11,9 +11,13 @@ class Review < ActiveRecord::Base
 
   acts_as_votable
   acts_as_commentable
-  ratyrate_rateable 'product'
 
   def first_photo
     photos.first.file_name.url if photos.first.present?
   end
+  
+  def avatar
+    user.avatars.first.avatar_file.url if user.avatars.first.present?
+  end
+  
 end

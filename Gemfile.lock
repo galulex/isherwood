@@ -273,7 +273,6 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (12.0.0)
-    ratyrate (1.2.2.alpha)
     rbvmomi (1.9.4)
       builder (~> 3.2)
       json (>= 1.8)
@@ -346,7 +345,6 @@ DEPENDENCIES
   mini_magick
   pundit
   rails (= 4.2.5)
-  ratyrate
   sass-rails (>= 3.2)
   sdoc (~> 0.4.0)
   selectize-rails

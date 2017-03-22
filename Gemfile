@@ -19,7 +19,6 @@ gem "selectize-rails"
 gem 'acts_as_votable', '~> 0.10.0'
 gem "acts_as_follower"
 gem 'acts_as_commentable'
-gem 'ratyrate'
 gem 'acts_as_tree'
 gem 'cocoon'
 gem 'masonry-rails'

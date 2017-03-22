@@ -6,11 +6,11 @@
           <%= image_tag review.first_photo %>
           <div class="caption">
           <h4><%= link_to review.title, review %></h4>
-          <h6><strong><%= link_to ("WRITTEN BY " + review.user.username.upcase), review.user %></strong></h6>
+          <%= image_tag review.avatar, :class => "card-avatar" %><h6 class="writtenby"><strong><%= link_to ("WRITTEN BY " + review.user.username.upcase), review.user %></strong></h6>
+          <div class="card-review">
           <%= review.description.truncate_words(60, omission: '...') %>
-          <br>    
-          <br>
-          <%= link_to review.brand.label, review.brand, :class => 'btn btn-sm btn-lake' %>
+          </div>
+          <%= link_to review.brand.label, review.brand, :class => 'btn btn-xs btn-main' %>
           </div>
         </div>   
       </div>
