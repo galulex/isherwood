@@ -1,7 +1,12 @@
-<div class="field col-md-8">
+<div class="field col-md-8 <%= 'hidden' unless local_assigns[:visible] %>">
   <figure class='photozone'>
     <%= f.file_field :file_name, accept: 'image/*', data: { photo: true } %>
     <%= f.hidden_field :file_name_cache %>
-    <%= image_tag f.object.file_name.url %>
+    <%= image_tag f.object.file_name %>
   </figure>
-</div>
+  
+  <div class="remove-photo-button">
+  <%= link_to_remove_association 'Remove', f, wrapper_class: 'field', data: { remove_photo: true } %>
+  </div>
+  
+</div>  
