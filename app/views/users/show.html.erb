@@ -3,6 +3,7 @@
 <div class="container-fluid backgrey">
   <div class="container profileheader">
     <div class="col-xs-12 col-md-6">
+      <%= image_tag @user.avatars.first.avatar_file.url, :class => "profile-avatar"%>
       <h1><%= @user.first_name %> <%= @user.last_name %></h1>
       <p><strong>@<%= @user.username %></strong></p>
       <p><%= @user.about %></p>

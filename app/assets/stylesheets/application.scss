@@ -9,11 +9,6 @@
 @import "jquery.atwho";
 @import "avatars";
 
-// start removing cards padding
-
-.thumbnail {
-    padding:0;
-}
 
 // adjust homepage See All button margins
 
@@ -341,7 +336,7 @@ background-image: linear-gradient(90deg, #F03141, #FE7A00);
     padding-bottom: 30px;
 }
 
-// card-avatar
+// Cards
 
 .card-avatar {
     object-fit: cover;
@@ -361,4 +356,17 @@ h6.writtenby {
 .card-review {
     margin-top: 12px;
     padding-bottom: 12px;
+}
+
+.thumbnail {
+    padding:0;
+}
+
+// Avatar on profile page
+
+.profile-avatar {
+    object-fit: cover;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
 }
