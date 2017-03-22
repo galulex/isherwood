@@ -4,6 +4,11 @@ class UsersController < ApplicationController
     @reviews = @user.reviews
   end
   
+  def new
+  @user = User.new
+  @user.avatars.build
+ end
+  
   def index
     @users = User.all
     render(json: @users, each_serializer: UserSerializer)

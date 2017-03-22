@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
          
   has_many :reviews
   has_many :events
+  has_many :avatars
+
+         
+           accepts_nested_attributes_for :avatars, reject_if: :all_blank, allow_destroy: true
   
   acts_as_voter
   acts_as_follower

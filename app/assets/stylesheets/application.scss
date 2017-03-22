@@ -7,6 +7,7 @@
 @import "photos";
 @import "masonry/fluid";
 @import "jquery.atwho";
+@import "avatars";
 
 // start removing cards padding
 
@@ -331,4 +332,11 @@ background-image: linear-gradient(90deg, #F03141, #FE7A00);
 
 .edit-review-button {
     margin-top: 10px;
+}
+
+// change avatar button
+
+.change-avatar-button {
+    margin-top: 10px;
+    padding-bottom: 30px;
 }
