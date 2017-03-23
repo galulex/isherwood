@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170322050739) do
+ActiveRecord::Schema.define(version: 20170323070933) do
 
   create_table "avatars", force: :cascade do |t|
     t.string   "avatar_file"
@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(version: 20170322050739) do
     t.string   "item_type"
     t.integer  "parent_id"
   end
+
+  create_table "category_featured_reviews", force: :cascade do |t|
+    t.integer  "category_id"
+    t.integer  "review_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "category_featured_reviews", ["category_id", "review_id"], name: "index_category_featured_reviews_on_category_id_and_review_id", unique: true
 
   create_table "comments", force: :cascade do |t|
     t.string   "title",            limit: 50, default: ""
