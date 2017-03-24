@@ -23,7 +23,7 @@
     margin-bottom: 30px;
 }
 
-// Start Fonts
+// fonts
 
 h1, h2 {
 
@@ -40,10 +40,6 @@ font-family: "Helvetica Neue", "Roboto",
     sans-serif;
 }
 
-h1.massive {
-    font-size: 50px;
-}
-
 body {
 font-family: "Helvetica Neue", "Roboto",
     "Segoe UI", "Oxygen", "Ubuntu", "Cantarell",
@@ -56,7 +52,7 @@ strong {
 }
 
 
-// Gradient
+// gradient
 
 .gradient {
  background-image: linear-gradient(45deg, #8CBFC6, #00C3BD);
@@ -126,24 +122,6 @@ body {
     margin-top: 60px;
 }
 
-// fixes the review text and header
-
-
-@media screen and (min-width: 767px){
-.affix {
-width: 500px;
-}
-}
-
-@media screen and (max-width: 767px){
-.affix {
-position: static;
-width: 100%;
-top: 0;
-padding-bottom: 50px;
-}
-}
-
 // make all disabled buttons invisible
 
 :disabled {
@@ -211,20 +189,20 @@ span.votes-count {
     left: 8px;
 }
 
-// go to next step review
+// publish navigation
 
-.nextnav {
+.publish-nav {
     width: 100%;
     height: 52px;
     background: #FAFAFA;
 }
 
-.review-next {
-    margin-top: 10px;
+.publish-review {
+    margin-top: 9px;
 }
 
-.review-write {
-    margin-top: 18px;
+.review-step {
+    margin-top: 16px;
 }
 
 // comments styling
@@ -240,7 +218,7 @@ span.votes-count {
     color : #CCC;
 }
 
-// change links color
+// change color of links
 
 a {
     color: #808284;
@@ -252,7 +230,7 @@ a:hover, a:focus {
     text-decoration: underline;
 }
 
-//
+// hero image on homepage
 
 .home-display {
 
@@ -282,7 +260,7 @@ a:hover, a:focus {
 }
 
 
-// resize peace
+// victory sign on about pages
 
 .victory {
     max-height: 80px;
@@ -290,8 +268,7 @@ a:hover, a:focus {
 
 }
 
-
-//increase font size for reading
+// increase font size for reading
 
 .readscape {
  font-size: 130%;
@@ -319,7 +296,7 @@ a:hover, a:focus {
     margin-top: 10px;
 }
 
-// add & remove review buttons
+// add and remove review buttons
 
 .delete-review-button {
     margin-top: 20px;
@@ -336,18 +313,18 @@ a:hover, a:focus {
     padding-bottom: 30px;
 }
 
-// Cards
+// cards
 
 .card-avatar {
     object-fit: cover;
     height: 30px;
     width: 30px;
     border-radius: 50%;
-        display:inline;
+    display:inline;
     vertical-align:middle;  
 }
 
-h6.writtenby { 
+h6.written-by { 
     display:inline;
     vertical-align: center;
     padding-left: 10px; 
@@ -362,7 +339,7 @@ h6.writtenby {
     padding:0;
 }
 
-// Avatar on profile page
+// avatar on profile page
 
 .profile-avatar {
     object-fit: cover;
@@ -371,7 +348,13 @@ h6.writtenby {
     border-radius: 50%;
 }
 
+// featured stuff
+
 .featured-reviews {
     margin-top: 20px;
     padding-bottom: 20px;
+}
+
+.featured-links {
+    margin-top : 20px;
 }
