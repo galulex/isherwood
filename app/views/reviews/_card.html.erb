@@ -5,12 +5,13 @@
         <div class="thumbnail">
           <%= image_tag review.first_photo %>
           <div class="caption">
-          <h4><%= link_to review.title, review %></h4>
+          <h4><%= link_to review.title.truncate_words(10, omission: '...'), review %></h4>
           <%= image_tag review.avatar, :class => "card-avatar" %><h6 class="writtenby"><strong><%= link_to ("WRITTEN BY " + review.user.username.upcase), review.user %></strong></h6>
           <div class="card-review">
-          <%= review.description.truncate_words(60, omission: '...') %>
+          <%= review.description.truncate_words(30, omission: '...') %>
           </div>
           <%= link_to review.brand.label, review.brand, :class => 'btn btn-xs btn-main' %>
+          <%= link_to review.category.item_type, review.category, :class => 'btn btn-xs btn-main' %>
           </div>
         </div>   
       </div>

@@ -7,13 +7,18 @@
       <hr>
       <h6><strong>TOP BRANDS</strong></h6>
         <% @category.brands.each do |brand| %>
-      <%= link_to brand.label, brand, class: 'btn btn-sm btn-main' %>
+      <%= link_to brand.label, brand, class: 'btn btn-sm btn-lakeside' %>
       <% end %>
     </div>
   </div>
-  <%= render "reviews/card", reviews: @category.featured_reviews %>
 </div>
 
-<div class="cardgrid">
+<div class="container featured-reviews">
+<h3>Check these out</h3>
+</div>
+<%= render "reviews/card", reviews: @category.featured_reviews %>
+<div class="container featured-reviews">
+<h3>All reviews</h3>  
+</div>
 <%= render "reviews/card", reviews: @category.reviews %>
 </div>
