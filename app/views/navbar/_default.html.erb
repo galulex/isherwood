@@ -29,12 +29,10 @@
 			<li class="active"><%= link_to "Sign Up", new_user_registration_path %><span class="sr-only">(current)</span></a></li>
 			<li class="active"><%= link_to "Log In", new_user_session_path %><span class="sr-only">(current)</span></a></li>
 			<% end %>
-			
 		</ul>
-			
-			<form class="navbar-form navbar-left search-form" role="search">
-				<input type="text" class="form-control" placeholder="Search" />
-			</form>
+		<%= form_for :term, html: {class: "navbar-form navbar-left search-form"}, url: search_path, method: :get do |form| %>
+    		<%= text_field_tag :term, params[:term], class: 'form-control', placeholder: "Search" %>
+		<% end %>
 		</div>
 	</div>
 </nav>

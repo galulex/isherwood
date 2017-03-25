@@ -1,16 +1,7 @@
 <h2>Search Results for: <i><%= params[:term] %></i></h2>
 
 <% if @reviews %>
-<ul class="search_results">
-	<% @reviews.with_details.each do |review, details| %>
-		<li>
-			<h3>
-				<%= link_to review.title, controller: "reviews", action: "show", id: review.id %>
-			</h3>
-    	<p><%= details[:highlight][:description].html_safe %>...</p>
-		</li>
-	<% end %>
-</ul>
+<%= render "reviews/card", reviews: @reviews %>
 <% else %>
 	<p>Your search did not match any documents.</p>
 <% end %>
