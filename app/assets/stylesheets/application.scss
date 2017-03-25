@@ -276,7 +276,7 @@ a:hover, a:focus {
 
 // profile
 
-.profileheader {
+.page-banner {
  margin-top: 50px;
  margin-bottom: 50px;
 }
@@ -357,4 +357,15 @@ h6.written-by {
 
 .featured-links {
     margin-top : 20px;
+}
+
+// big search box
+
+.big-search {
+    background : #FAFAFA;
+border: 0px none;
+}
+
+*:focus {
+    outline: none;
 }

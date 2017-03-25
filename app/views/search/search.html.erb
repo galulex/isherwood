@@ -1,4 +1,14 @@
-<h2>Search Results for: <i><%= params[:term] %></i></h2>
+<div class="container-fluid backgrey">
+  <div class="container page-banner">
+<%= form_for :term, url: search_path, method: :get do |form| %>
+  <h1>
+    <%= text_field_tag :term, params[:term], class: 'big-search', autocomplete: "off" %>
+  </h1>
+  <hr>
+<% end %>
+  <p><h5><%= render_results_count %></h5></p>
+</div>
+</div>
 
 <% if @reviews %>
 <%= render "reviews/card", reviews: @reviews %>
