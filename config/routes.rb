@@ -30,6 +30,9 @@ end
         put "dislike", to: "reviews#dislike"
     end
 end
+
+  get "search", to: "search#search"
+  get 'search/typeahead/:term' => 'search#typeahead'
   
   get "/pages/:page" => "pages#show"
 

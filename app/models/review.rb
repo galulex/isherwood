@@ -1,4 +1,7 @@
 class Review < ActiveRecord::Base
+  
+    searchkick
+    
   belongs_to :brand
   belongs_to :user
   belongs_to :category
