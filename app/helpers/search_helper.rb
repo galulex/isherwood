@@ -8,7 +8,7 @@ module SearchHelper
       if number_of_results.zero?
         'NO REVIEWS FOUND'
       else
-        "#{number_of_results} #{'review'.pluralize(number_of_results).upcase}"
+        "#{number_of_results} #{'review'.pluralize(number_of_results).upcase} FOUND"
       end
     end
 end

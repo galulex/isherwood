@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170323070933) do
+ActiveRecord::Schema.define(version: 20170326000653) do
 
   create_table "avatars", force: :cascade do |t|
     t.string   "avatar_file"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 20170323070933) do
 
   add_index "brand_categories", ["brand_id"], name: "index_brand_categories_on_brand_id"
   add_index "brand_categories", ["category_id"], name: "index_brand_categories_on_category_id"
+
+  create_table "brand_featured_reviews", force: :cascade do |t|
+    t.integer  "brand_id"
+    t.integer  "review_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "brand_featured_reviews", ["brand_id", "review_id"], name: "index_brand_featured_reviews_on_brand_id_and_review_id", unique: true
 
   create_table "brands", force: :cascade do |t|
     t.datetime "created_at",   null: false

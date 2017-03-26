@@ -362,10 +362,11 @@ h6.written-by {
 // big search box
 
 .big-search {
-    background : #FAFAFA;
+    background-color : #FAFAFA;
 border: 0px none;
+
 }
 
-*:focus {
+.big-search:focus {
     outline: none;
 }

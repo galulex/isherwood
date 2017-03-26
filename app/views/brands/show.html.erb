@@ -1,7 +1,7 @@
 <% title @brand.label%>
 
 <div class="container-fluid backgrey">
-  <div class="container profileheader">
+  <div class="container page-banner">
     <div class="col-xs-12 col-md-6">
       <h1><%= @brand.label %></h1>
       <hr>
@@ -13,6 +13,12 @@
   </div>
 </div>
 
-<div class="cardgrid">
-<%= render "/reviews/card", reviews: @brand.reviews %>
+<div class="container featured-reviews">
+<h3>Check these out</h3>
+</div>
+<%= render "reviews/card", reviews: @brand.featured_reviews %>
+<div class="container featured-reviews">
+<h3>All reviews</h3>  
+</div>
+<%= render "reviews/card", reviews: @brand.reviews %>
 </div>

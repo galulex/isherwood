@@ -1,6 +1,6 @@
 class Review < ActiveRecord::Base
   
-    searchkick
+  searchkick
     
   belongs_to :brand
   belongs_to :user
