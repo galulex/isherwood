@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-
-  post '/rate' => 'rater#create', :as => 'rate'
-  get 'users/show'
-
+  
   devise_for :users
   resources :brands
-  
+  resources :activities
+    
   resources :explore
     resources :categories
   

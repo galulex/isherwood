@@ -7,10 +7,12 @@ class CommentsController < ApplicationController
         @review = Review.find(params[:review_id]) 
         @comment = @review.comments.create(comment_params) 
         @comment.user_id = current_user.id 
-        @comment.save 
-        #redirect_to review_path(@review) 
-        redirect_to :back
-
+        
+        if @comment.save
+           @comment.create_activity :create, owner: current_user
+           redirect_to :back
+        end
+        
     end 
 
     private 
