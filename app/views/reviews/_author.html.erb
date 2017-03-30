@@ -33,11 +33,13 @@
 
     <h1><%= render_comments_count %></h1>
     <% @comments.each do |comment| %>
-            <hr>
+     <div id="comment_<%= comment.id %>">
+       <hr>
     <p><strong><%= comment.user.username %></strong></p>
       <p class="comment"><%= comment.comment %><p>
        <p class="timeago"><%="#{time_ago_in_words(comment.created_at)} ago"%></p>
-       <%= link_to "Delete", [@review, comment], method: :delete %> 
+       <%= link_to "Delete", [@review, comment], method: :delete, remote: true %> 
+       </div>
     <% end %>
   </div>
   <%= form_for([@review, @review.comments.build]) do |f| %> 
