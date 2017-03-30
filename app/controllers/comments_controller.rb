@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
         
         if @comment.save
            @comment.create_activity :create, owner: current_user
-           redirect_to :back
+           redirect_to review_path(@review.id, anchor: "last-comment")
         end
         
     end 
