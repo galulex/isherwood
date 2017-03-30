@@ -83,6 +83,8 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review.destroy
+    @comment = @review.comments.find(params[:id])
+    @comment.destroy
     redirect_to user_path(current_user)
   end
 

@@ -37,7 +37,7 @@
     <p><strong><%= comment.user.username %></strong></p>
       <p class="comment"><%= comment.comment %><p>
        <p class="timeago"><%="#{time_ago_in_words(comment.created_at)} ago"%></p>
-
+       <%= link_to "Delete", [@review, comment], method: :delete %> 
     <% end %>
   </div>
   <%= form_for([@review, @review.comments.build]) do |f| %> 
