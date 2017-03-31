@@ -1,7 +1,6 @@
 .avatarzone {
   max-width: 100px;
   margin-top: 20px;
-  border: 1px solid gray;
   position: relative;
   input {
     opacity: 0;
@@ -10,8 +9,8 @@
   }
   img {
     max-width: 100%;
-    width: auto;
-    height: auto;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
   }
   label {
