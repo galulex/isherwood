@@ -1,4 +1,5 @@
 .avatarzone {
+  display: inline-block;
   max-width: 100px;
   margin-top: 20px;
   position: relative;
@@ -12,11 +13,12 @@
     width: 100px;
     height: 100px;
     object-fit: cover;
+    border-radius: 50%;
   }
   label {
     position: absolute;
-    bottom: -25px;
-    right: -25px;
+    bottom: -15px;
+    right: -15px;
     border-radius: 50%;
     width: 55px;
     height: 55px;
