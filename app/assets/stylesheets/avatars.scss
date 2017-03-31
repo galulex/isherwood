@@ -1,13 +1,27 @@
 .avatarzone {
+  max-width: 100px;
   margin-top: 20px;
+  border: 1px solid gray;
+  position: relative;
   input {
     opacity: 0;
     z-index: -2;
+    position: absolute;
   }
   img {
     max-width: 100%;
     width: auto;
     height: auto;
     object-fit: cover;
+  }
+  label {
+    position: absolute;
+    bottom: -25px;
+    right: -25px;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: inline-block;
+    padding-top: 11px;
   }
 }

@@ -15,7 +15,11 @@ class AvatarUploader < CarrierWave::Uploader::Base
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
-  
+
+  def default_url
+    'https://supportforums.cisco.com/sites/default/files/default_images/default-avatar.png'
+  end
+
   process :resize_to_fit => [200, 200]
 
 end
