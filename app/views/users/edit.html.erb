@@ -1,0 +1,29 @@
+<%= form_for current_user do |f| %>
+
+  <div class="publish-nav">
+    <div class="container">
+      <div class="publish-review pull-right">
+        <button class='btn btn-main'>
+          Save
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="review-step pull-left">
+        <p>Edit Profile</p>
+      </div>
+    </div>
+  </div>
+
+  <div class= "container">
+    <div class="field col-md-8">
+      <div class='avatarzone'>
+        <%= image_tag current_user.avatar.url %>
+        <%= f.file_field :avatar, data: { photo: true } %>
+        <%= f.hidden_field :avatar_cache %>
+        <label for='user_avatar' class='btn btn-main'>
+          <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+<% end %>
