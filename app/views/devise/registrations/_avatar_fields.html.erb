@@ -1,7 +1,10 @@
 <div class="field text-center">
   <figure class='avatarzone'>
-    <%= f.file_field :avatar_file, accept: 'image/*', data: { photo: true } %>
-    <%= f.hidden_field :avatar_file_cache %>
-    <%= image_tag f.object.avatar_file.url, class: 'img-rounded' %>
+    <%= f.file_field :avatar, accept: 'image/*', data: { photo: true } %>
+    <%= f.hidden_field :avatar_cache %>
+    <%= image_tag f.object.avatar.url, class: 'img-rounded' %>
+    <label for='user_avatar' class='btn btn-main'>
+      <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+    </label>
   </figure>
 </div>

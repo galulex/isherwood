@@ -1,7 +1,7 @@
 class Review < ActiveRecord::Base
-  
+
   searchkick
-    
+
   belongs_to :brand
   belongs_to :user
   belongs_to :category
@@ -18,9 +18,8 @@ class Review < ActiveRecord::Base
   def first_photo
     photos.first.file_name.url if photos.first.present?
   end
-  
+
   def avatar
-    user.avatars.first.avatar_file.url if user.avatars.first.present?
+    user.avatar.url
   end
-  
 end
