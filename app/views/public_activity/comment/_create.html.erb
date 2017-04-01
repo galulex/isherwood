@@ -1,7 +1,3 @@
-added comment
-
 <% if activity.trackable %>
-  to <%= link_to activity.trackable.commentable.title, activity.trackable.commentable %>
-<% else %>
-  which has since been removed
-<% end %> 
+  commented on <%= link_to activity.trackable.commentable.title, activity.trackable.commentable %>
+<% end %>   
