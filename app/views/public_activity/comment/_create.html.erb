@@ -1,3 +1,3 @@
 <% if activity.trackable %>
-  commented on <%= link_to activity.trackable.commentable.title, activity.trackable.commentable %>
+  commented on <%= link_to activity.trackable.commentable.title.truncate(50, omission: '...'), activity.trackable.commentable %>
 <% end %>   

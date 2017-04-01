@@ -17,7 +17,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
   def default_url
-    'https://supportforums.cisco.com/sites/default/files/default_images/default-avatar.png'
+    'avatar.jpg'
   end
 
   process :resize_to_fit => [200, 200]
