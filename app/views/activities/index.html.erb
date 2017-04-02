@@ -5,21 +5,27 @@
 </div>
 
 <div class="container">
-<div class="col-md-offset-2 col-md-8">
-<% @activities.each do |activity| %>
-  <% if activity.trackable %>
-    <% if activity.trackable.commentable.user == current_user %>
-      <div class="activity">
-        <h5>
-      <%= image_tag activity.trackable.commentable.user.avatar, :class => "card-avatar" %>
-      <%= link_to activity.owner.username, activity.owner if activity.owner %>
-      <%= render_activity activity %>
-      <%="#{time_ago_in_words(activity.trackable.created_at)} ago"%>
-      </h5>
-      <hr>
-      </div>
-    <% end %>
-  <% end %>
-<% end %>
-</div>
+    <div class="col-md-offset-2 col-md-8">
+        <% @activities.each do |activity| %>
+            <% if activity.trackable %>
+                <% if activity.trackable.commentable.user == current_user %>
+                    <div class="media">
+                        <div class="media-left">
+                        <%= image_tag activity.trackable.commentable.user.avatar, :class => "card-avatar" %>
+                        </div>
+                        <div class="media-body">
+                        <div class="activity-body">
+                            <p>
+                        <%= link_to activity.owner.username, activity.owner if activity.owner %>
+                        <%= render_activity activity %>
+                        <%="#{time_ago_in_words(activity.trackable.created_at)} ago"%>
+                        </p>
+                        </div>
+                        </div>
+                    </div>
+                    <hr>
+                <% end %>
+            <% end %>
+        <% end %>
+    </div>
 </div>

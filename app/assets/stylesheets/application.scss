@@ -188,6 +188,11 @@ body {
     font-size: 20px;
 }
 
+.glyphicon.glyphicon-remove {
+    color: #CCC;
+    font-size: 12px;
+}
+
 span.votes-count {
     font-size: 15px;
     position: relative;
@@ -221,7 +226,12 @@ span.votes-count {
 }
 
 .timeago {
-    color : #CCC;
+    color: #CCC;
+    display: inline;
+}
+
+.comment-user {
+display: inline;
 }
 
 // change color of links
@@ -369,10 +379,16 @@ h6.written-by {
 
 .big-search {
     background-color : #FAFAFA;
-border: 0px none;
+    border: 0px none;
 
 }
 
 .big-search:focus {
     outline: none;
+}
+
+// activity feed
+
+.activity-body {
+    margin-top: 4px;
 }

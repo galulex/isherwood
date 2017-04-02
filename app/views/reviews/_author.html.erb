@@ -35,10 +35,13 @@
     <% @comments.each do |comment| %>
      <div id="comment_<%= comment.id %>">
        <hr>
-    <p><strong><%= comment.user.username %></strong></p>
-      <p class="comment"><%= comment.comment %><p>
-       <p class="timeago"><%="#{time_ago_in_words(comment.created_at)} ago"%></p>
-       <%= link_to "Delete", [@review, comment], method: :delete, remote: true %> 
+      <p class="comment-user"><strong><%= comment.user.username.upcase %></strong></p><p class="timeago">&nbsp&nbsp&nbsp<%="#{time_ago_in_words(comment.created_at)} ago"%></p>
+      <br>
+      <br>
+      <p><%= comment.comment %><p>
+       <%= link_to [@review, comment], method: :delete, remote: true do %>
+          <i class="glyphicon glyphicon-remove"></i>
+       <% end %>
        </div>
     <% end %>
   </div>
