@@ -7,14 +7,18 @@
       <h1><%= @user.first_name %> <%= @user.last_name %></h1>
       <p><strong>@<%= @user.username %></strong></p>
       <p><%= @user.about %></p>
-      <span>
-      <strong><%= @user.follow_count %></strong>&nbsp Following &nbsp
-      <strong><%= @user.followers_count %></strong>&nbsp Followers
-      </span>
+      
+      <%= link_to followings_path do %>
+       <strong><%= @user.follow_count %></strong> Following
+      <% end %>
+      &nbsp
+      <%= link_to followers_path do %>
+      <strong><%= @user.followers_count %></strong> Followers
+      <% end %>
+      
       <%= render_follow_conditionally %>
     </div>
   </div>
 </div>
-
 
 <%= render "reviews/card", reviews: @user.reviews %>

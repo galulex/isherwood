@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :brands
   resources :activities
+    resources :followers
+    resources :followings
     
   resources :explore
     resources :categories
