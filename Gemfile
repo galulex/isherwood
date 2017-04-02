@@ -25,7 +25,6 @@ gem 'masonry-rails'
 gem 'jquery-atwho-rails'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'searchkick'
-gem 'bootstrap-typeahead-rails'
 gem 'public_activity'
 
 group :development, :test do
