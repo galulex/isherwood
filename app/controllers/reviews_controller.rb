@@ -26,13 +26,9 @@ class ReviewsController < ApplicationController
   def index
     @reviews = Review.all
     authorize @reviews
-
-    top_review_ids = [1,2,5]
-    @top_reviews = Review.find(top_review_ids)
-    favorite_review_ids = [8,2,5]
-    @favorite_reviews = Review.find(favorite_review_ids)
-    new_review_ids = [1,2,5]
-    @new_reviews = Review.find(new_review_ids)
+    @favorite_reviews = Review.where(favorite: true)
+    @top_reviews = Review.where(top: true)
+    @new_reviews = Review.where(new: true)
   end
 
   def show
