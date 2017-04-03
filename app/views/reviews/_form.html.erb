@@ -29,18 +29,18 @@
       </div>
     <% end %>
 
-    <div class="field col-md-8">
+    <div class="field col-xs-12 col-md-8 col-md-offset-2">
       <%= f.text_area :title, class: 'h1 review-title', placeholder: "Add a title" %>
     </div>
-    <div class="field col-md-8">
+    <div class="field col-xs-12 col-md-8 col-md-offset-2">
       <%= f.text_area :description, class: 'p review-input', placeholder: "Write your review..." %>
     </div>
 
-    <div class="field col-md-8">
+    <div class="field col-xs-12 col-md-8 col-md-offset-2">
       <%= f.collection_select(:brand_id, Brand.all, :id, :label, { prompt: 'Select a Brand', selected: @review.brand_id}, { class: 'brand-autocomplete' }) %>
     </div>
 
-    <div class="field col-md-8">
+    <div class="field col-xs-12 col-md-8 col-md-offset-2">
       <%= f.collection_select(:category_id, Category.all, :id, :item_type, { prompt: 'Select a Category', selected: @review.category_id}, { class: 'brand-autocomplete' }) %>
     </div>
 
@@ -48,7 +48,7 @@
       <%= render 'photo_fields', f: photo, visible: true %>
     <% end %>
     
-    <div class="field col-md-8 add-photo-button">
+    <div class="field col-xs-12 col-md-8 col-md-offset-2 add-photo-button">
       <%= link_to_add_association f, :photos, data: { new_photo: true }, class: "#{'hidden' if @review.photos.size > 4} btn btn-lake" do %>
         <i class="glyphicon glyphicon-camera"></i>
       <% end %>

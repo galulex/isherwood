@@ -16,6 +16,14 @@
   </div>
 </div>
 
-<% @user.following_users.each do |following| %>
-<%= following.username if following.username %>
+<div class="container">
+<div class="col-xs-6 col-md-2">
+<div class="well text-center">
+<% @user.following_users.each do |following_user| %>
+<%= image_tag @user.avatar.url, :class => "profile-avatar"%>
+<h4><%= link_to following_user.first_name, user_path(@user) %><h5>
+<p><%= following_user.username %></p>
 <% end %>
+</div>
+</div>
+</div>

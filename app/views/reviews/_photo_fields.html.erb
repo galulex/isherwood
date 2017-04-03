@@ -1,4 +1,4 @@
-<div class="field col-md-8 <%= 'hidden' unless local_assigns[:visible] %>">
+<div class="field col-xs-12 col-md-8 col-md-offset-2 <%= 'hidden' unless local_assigns[:visible] %>">
   <figure class='photozone'>
     <%= f.file_field :file_name, accept: 'image/*', data: { photo: true } %>
     <%= f.hidden_field :file_name_cache %>
