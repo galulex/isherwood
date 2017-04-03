@@ -241,7 +241,7 @@ a {
     text-decoration: none;
 }
 
-a:hover, a:focus {
+a:hover, a:focus, a:active {
     color: #00C3BD;
     text-decoration: none;
 }
@@ -391,4 +391,9 @@ h6.written-by {
 
 .activity-body {
     margin-top: 4px;
+}
+
+
+.put-inline {
+    display:inline;
 }

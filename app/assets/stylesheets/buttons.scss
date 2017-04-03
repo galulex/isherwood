@@ -189,3 +189,52 @@ fieldset[disabled] .btn-lakeside.active {
   color: #00C3BD; 
   background-color: #FFFFFF; 
 }
+
+// btn clear
+
+
+.btn-clear { 
+  color: #616161; 
+  background-color: #FAFAFA; 
+  border-color: #FAFAFA; 
+} 
+ 
+.btn-clear:hover, 
+.btn-clear:focus, 
+.btn-clear:active, 
+.btn-clear.active, 
+.open .dropdown-toggle.btn-clear { 
+  color: #616161; 
+  background-color: #FAFAFA; 
+  border-color: #FAFAFA; 
+} 
+ 
+.btn-clear:active, 
+.btn-clear.active, 
+.open .dropdown-toggle.btn-clear { 
+  background-image: none; 
+} 
+ 
+.btn-clear.disabled, 
+.btn-clear[disabled], 
+fieldset[disabled] .btn-clear, 
+.btn-clear.disabled:hover, 
+.btn-clear[disabled]:hover, 
+fieldset[disabled] .btn-clear:hover, 
+.btn-clear.disabled:focus, 
+.btn-clear[disabled]:focus, 
+fieldset[disabled] .btn-clear:focus, 
+.btn-clear.disabled:active, 
+.btn-clear[disabled]:active, 
+fieldset[disabled] .btn-clear:active, 
+.btn-clear.disabled.active, 
+.btn-clear[disabled].active, 
+fieldset[disabled] .btn-clear.active { 
+  background-color: #FAFAFA; 
+  border-color: #FAFAFA; 
+} 
+ 
+.btn-clear .badge { 
+  color: #FAFAFA; 
+  background-color: #616161; 
+}

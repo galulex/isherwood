@@ -1,3 +1,29 @@
+<a id="profile-header"></a>
+<div class="container-fluid backgrey">
+  <div class="container page-banner">
+    <div class="col-xs-12 col-md-6">
+      <%= image_tag @user.avatar.url, :class => "profile-avatar"%>
+      <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+      <br>
+      <%= link_to followers_path, :class => "btn btn-main put-inline" do %>
+      <strong><%= @user.followers_count %></strong> Followers
+      <% end %>
+      &nbsp
+      <%= link_to followings_path, :class => "btn btn-clear put-inline" do%>
+      <strong><%= @user.follow_count %></strong> Following
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+<div class="col-xs-12 col-md-2">
+    <div class="well text-center">
 <% @user.followers.each do |followers| %>
-<%= followers.username %>
+<%= image_tag @user.avatar.url, :class => "profile-avatar"%>
+<h4><%= link_to followers.first_name, user_path(@user) %><h5>
+<p><%= followers.username %></p>
 <% end %>
+</div>
+</div>
+</div>
