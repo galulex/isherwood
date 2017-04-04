@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:friendly_id])
     @reviews = @user.reviews
   end
 
   def new
     @user = User.new
-    @user.avatars.build
+    @user.avatars.build 
   end
 
   def index

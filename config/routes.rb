@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :followers
     resources :followings
     
+     get '/:friendly_id', to: 'users#show', as: 'user'
+
     resource :profile, controller: :users, only: :show
     
   resources :explore
