@@ -6,9 +6,7 @@ Rails.application.routes.draw do
     resources :followers
     resources :followings
     
-     get '/:friendly_id', to: 'users#show', as: 'user'
-
-    resource :profile, controller: :users, only: :show
+  get '/@:friendly_id', to: 'users#show', as: 'user'
     
   resources :explore
     resources :categories
@@ -23,9 +21,6 @@ Rails.application.routes.draw do
    end
 end
 
-  delete 'delete_photo', to: "photos#delete_photo"
-  delete 'delete_all', to: 'photos#delete_all'
-
   resources :reviews do    
     resources :comments
     resources :photos
@@ -36,7 +31,6 @@ end
 end
 
   get "search", to: "search#search"
-  get 'search/typeahead/:term' => 'search#typeahead'
   
   get "/pages/:page" => "pages#show"
 
