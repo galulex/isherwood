@@ -4,8 +4,7 @@ class BrandsController < ApplicationController
   end
 
   def show
-    @brand = Brand.find(params[:id])
-    @reviews =Review.find(params[:id])
+    @brand = Brand.friendly.find(params[:id])
   end
   
     def new  

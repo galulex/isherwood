@@ -3,13 +3,13 @@ Rails.application.routes.draw do
   devise_for :users
   resources :brands
   resources :activities
-    resources :followers
-    resources :followings
+  resources :followers
+  resources :followings
     
   get '/@:friendly_id', to: 'users#show', as: 'user'
     
   resources :explore
-    resources :categories
+  resources :categories
   
   resources :users do
         resources :avatars
@@ -18,8 +18,8 @@ Rails.application.routes.draw do
       get :unfollow
       post :follow 
       post :unfollow 
-   end
-end
+    end
+  end
 
   resources :reviews do    
     resources :comments

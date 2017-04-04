@@ -1,4 +1,10 @@
 class Brand < ActiveRecord::Base
+    
+      extend FriendlyId
+      
+      friendly_id :label, use: :slugged
+
+
     has_many :reviews
     has_many :brand_categories
     has_many :categories, through: :brand_categories
