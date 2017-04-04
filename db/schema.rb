@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170403115925) do
+ActiveRecord::Schema.define(version: 20170404015506) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -103,6 +103,19 @@ ActiveRecord::Schema.define(version: 20170403115925) do
   add_index "follows", ["followable_id", "followable_type"], name: "fk_followables"
   add_index "follows", ["follower_id", "follower_type"], name: "fk_follows"
 
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+
   create_table "photos", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -138,10 +151,12 @@ ActiveRecord::Schema.define(version: 20170403115925) do
     t.boolean  "top",         default: false
     t.boolean  "new",         default: false
     t.boolean  "favorite",    default: false
+    t.string   "slug"
   end
 
   add_index "reviews", ["brand_id"], name: "index_reviews_on_brand_id"
   add_index "reviews", ["category_id"], name: "index_reviews_on_category_id"
+  add_index "reviews", ["slug"], name: "index_reviews_on_slug", unique: true
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "users", force: :cascade do |t|

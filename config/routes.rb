@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :followers
     resources :followings
     
+    resource :profile, controller: :users, only: :show
+    
   resources :explore
     resources :categories
   

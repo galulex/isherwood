@@ -26,6 +26,7 @@ gem 'jquery-atwho-rails'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'searchkick'
 gem 'public_activity'
+gem 'friendly_id', '~> 5.2'
 
 group :development, :test do
   gem 'byebug'
