@@ -1,4 +1,8 @@
 class Category < ActiveRecord::Base
+
+    extend FriendlyId
+  
+    friendly_id :item_type, use: :slugged
     
     has_many :brand_categories
     has_many :brands, through: :brand_categories
