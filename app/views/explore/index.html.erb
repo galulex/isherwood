@@ -2,10 +2,10 @@
 	<div class="container">
 		<h1 class="text-center">Find your next favorite</h1>
 		<div class="row top-buffer">
-		<% @featured_categories.each do |category| %>
+		<% @top_categories.each do |category| %>
 		<div class="col-md-3">
 			<div class="between-buffer">
-			<a href="#" class="btn btn-explore btn-lg btn-block btn-padding"><%= category.item_type %></a>
+			<%= link_to category.item_type, category, :class => "btn btn-explore btn-lg btn-block btn-padding" %></a>
 			</div>
 		</div>
 		<% end %>

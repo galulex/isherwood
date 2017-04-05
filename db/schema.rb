@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170404234907) do
+ActiveRecord::Schema.define(version: 20170405001646) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -58,11 +58,12 @@ ActiveRecord::Schema.define(version: 20170404234907) do
   add_index "brands", ["slug"], name: "index_brands_on_slug", unique: true
 
   create_table "categories", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "item_type"
     t.integer  "parent_id"
     t.string   "slug"
+    t.boolean  "top",        default: false
   end
 
   add_index "categories", ["slug"], name: "index_categories_on_slug", unique: true
