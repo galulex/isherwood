@@ -8,11 +8,7 @@
 <%= csrf_meta_tags %>
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Source+Sans+Pro:300" rel="stylesheet">
 
-<% if content_for?(:navbar) %>
-	<%= yield(:navbar) %>
-<% else %>
-	<%= render "navbar/default" %>
-<% end %>
+<%= render "navbar/default" %>
 
 </head>
 

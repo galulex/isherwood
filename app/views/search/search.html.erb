@@ -1,17 +1,13 @@
 <div class="container-fluid backgrey">
   <div class="container page-banner">
-<%= form_for :term, url: search_path, method: :get do |form| %>
-  <h1>
-    <%= text_field_tag :term, params[:term], class: 'big-search', autocomplete: "off" %>
-  </h1>
-  <hr>
-<% end %>
-  <p><h5><%= render_results_count %></h5></p>
-</div>
+    <%= form_for :term, url: search_path, method: :get do |form| %>
+    <h1><%= text_field_tag :term, params[:term], class: 'big-search', autocomplete: "off", placeholder: "Search Lushory"%></h1>
+    <hr>
+    <% end %>
+    <p><h5><%= render_results_count %></h5></p>
+  </div>
 </div>
 
 <% if @reviews %>
 <%= render "reviews/card", reviews: @reviews %>
-<% else %>
-	<p>Your search did not match any documents.</p>
 <% end %>
