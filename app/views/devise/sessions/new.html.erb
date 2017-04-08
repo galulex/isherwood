@@ -4,32 +4,29 @@
   <div class="row">
     <div class="col-xs-12 col-md-4 col-md-offset-4">
       <h1 class="text-center">Log In</h1>
-       <div class="account-card">
-
+      <div class="account-card">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <br>
         <%= f.email_field :email, autofocus: true, class: 'form-control field-space', placeholder: "Email" %>
         <br>
         <%= f.password_field :password, autocomplete: "off", class: 'form-control field-space', placeholder: "Password"  %>
         <br>
-      
-        <div class="rmbr-me">
+          <div class="rmbr-me">
           <% if devise_mapping.rememberable? %>
           <%= f.check_box :remember_me %>
           <%= f.label :remember_me, class: "h6" %>
           <% end %>
-        </div>
-        <br>
-        
-        <div class="actions">
-        <div class="action-btn">
-        <%= f.submit "Log in", :class => 'btn btn-main' %>
-        </div>
-        </div>
-<% end %>
-</div>
-<br>
-<p>Need an account?<%= render "devise/shared/links" %></p>
-</div>
-</div>
+          </div>
+          <br>
+          <div class="actions">
+          <div class="action-btn">
+          <%= f.submit "Log in", :class => 'btn btn-main' %>
+          </div>
+          </div>
+        <% end %>
+      </div>
+      <br>
+      <p>Need an account?<%= render "devise/shared/links" %></p>
+    </div>
+  </div>
 </div>
