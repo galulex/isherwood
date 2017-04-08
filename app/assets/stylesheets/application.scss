@@ -69,35 +69,34 @@ strong {
     padding-top:100px;
 }
 
-// material sign up
+// account card
 
-.signup-padding
+.account-card-begin
 {
     margin-top: 50px;
 }
 
-.have-account-padding
+.action-btn
 {
-    margin-top: 20px;
+    padding-left: 5%;
+    padding-bottom: 15px;
 }
 
-.materialform
+.rmbr-me
 {
-    max-width: 330px;
-    padding: 15px;
+    padding-left: 5%;
+}
+
+.field-space {
+    width: 90%;
     margin: 0 auto;
 }
 
-.materialformbutton
-{
-    padding-left: 15px;
-    padding-top: 15px;
-}
 
-.account-wall
+.account-card
 {
     margin-top: 20px;
-    padding: 0px 0px 20px 0px;
+    padding-bottom: 10px;
     background-color: #FAFAFA;
     -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
@@ -348,6 +347,12 @@ h6.written-by {
 
 .card-review {
     margin-top: 12px;
+    padding-bottom: 12px;
+}
+
+.caption-padding {
+    padding-left: 12px;
+    padding-right: 12px;
     padding-bottom: 12px;
 }
 
