@@ -16,3 +16,11 @@ def follow_toggler
     end
   end
 end
+
+def errors_for(model, attribute)
+  if model.errors[attribute].any?
+    content_tag :div, class: 'devise-error-space' do
+      attribute.to_s.humanize + " " + model.errors[attribute].to_sentence
+    end
+  end
+end

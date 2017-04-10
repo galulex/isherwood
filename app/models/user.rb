@@ -6,6 +6,11 @@ class User < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  
+  validates_uniqueness_of :username
+  validates_presence_of :first_name, :username
+  validates_exclusion_of :username, in: %w( admin user users explore search login signin signup ),
+  message: "has already been taken"
 
   has_many :reviews
   has_many :events

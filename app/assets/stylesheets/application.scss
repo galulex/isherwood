@@ -34,14 +34,14 @@ font-family: "Source Sans Pro", "Helvetica Neue", "Roboto",
 }
 
 h3, h4, h5, h6 {
-font-family: "Helvetica Neue", "Roboto",
+font-family: "Roboto",
     "Segoe UI", "Oxygen", "Ubuntu", "Cantarell",
     "Fira Sans", "Droid Sans",
     sans-serif;
 }
 
 body {
-font-family: "Helvetica Neue", "Roboto",
+font-family: "Roboto",
     "Segoe UI", "Oxygen", "Ubuntu", "Cantarell",
     "Fira Sans", "Droid Sans",
     sans-serif;
@@ -92,6 +92,11 @@ strong {
     margin: 0 auto;
 }
 
+.devise-error-space {
+  padding-left: 5%;
+  padding-top: 15px;
+  color: #EE4054;
+}
 
 .account-card
 {
