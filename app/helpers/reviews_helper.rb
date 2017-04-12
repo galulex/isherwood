@@ -39,4 +39,12 @@ module ReviewsHelper
       end
     end
     
+    def errors_for_reviews(model, attribute)
+  if model.errors[attribute].present?
+    content_tag :div, :class => 'review-error-space' do
+      model.errors[attribute].join(", ")
+    end
+  end
+end
+    
 end
