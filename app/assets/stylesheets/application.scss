@@ -104,12 +104,6 @@ body {
   padding-top: 50px;
 }
 
-// padding for alerts
-
-.alert-padding {
-  padding-top: 50px;
-}
-
 // padding for reviews
 
 .review-show-padding
@@ -415,13 +409,27 @@ h6.written-by {
 }
 
 .alert-success, .alert-info {
-    background-color: #0C6BED;
+    background-color: #3897F0;
     color: #FFF;
-    border-color: #0C6BED;
+    border-color: #3897F0;
     border-radius: 0;
 }
 
 .alert {
   margin-bottom: 0;
   text-align: center;
+  font-weight: 700;
+}
+
+.submit-comment {
+    padding-bottom: 50px;
+}
+
+.comment-input-box {
+  resize: vertical;
+}
+
+.close {
+  text-shadow: none;
+  opacity: 1;
 }
