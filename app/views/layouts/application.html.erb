@@ -13,18 +13,7 @@
 </head>
 
 <body>
-			<% if notice %>
-			<div class="container alert-padding">
-			<div class="alert alert-info"><%= notice %></div>
-			</div>
-			<% end %>
-			
-			
-			<% if alert %>
-			<div class="container alert-padding">
-			<div class="alert alert-warning"><%= alert %></div>
-			</div>
-			<% end %>
+ <%= flash_messages %>
 <%= yield %>
 
 </body>

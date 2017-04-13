@@ -404,3 +404,24 @@ h6.written-by {
 .put-inline {
     display:inline;
 }
+
+// alert
+
+.alert-warning, .alert-danger {
+    background-color: #FF5A5F;
+    color: #FFF;
+    border-color: #FF5A5F;
+    border-radius: 0;
+}
+
+.alert-success, .alert-info {
+    background-color: #0C6BED;
+    color: #FFF;
+    border-color: #0C6BED;
+    border-radius: 0;
+}
+
+.alert {
+  margin-bottom: 0;
+  text-align: center;
+}
