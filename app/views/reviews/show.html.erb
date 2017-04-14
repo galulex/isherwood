@@ -1,2 +1,20 @@
-<% title @review.title%>
-<%= render_review_conditionally %>
+<%= render "content" %>
+<%= render "photos" %>
+
+<div class="review-bottom" id="comments">
+  <div class= "container"> 
+    <div class= "col-xs-12 col-md-8 col-md-offset-2">
+    <br>
+    <%= link_to @review.brand.label, @review.brand, :class => 'btn btn-sm btn-lake' %>
+    <br>
+    <br>
+    <%= render_like_conditionally %>
+    
+    <span class="votes-count" data-id="<%= @review.id %>">
+    <%= @review.get_likes.size %>
+    </span>
+    
+    <%= render "comments" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<h2><%= render_comments_count %></h2>
+
+<% @comments.each do |comment| %>
+  <div id="comment_<%= comment.id %>">
+    <hr>
+    <p class="comment-user"><strong><%= link_to comment.user.username.upcase, comment.user %></strong></p><p class="timeago">&nbsp&nbsp&nbsp<%="#{time_ago_in_words(comment.created_at)} ago"%></p>
+    <br>
+    <br>
+    <p><%= comment.comment %><p>
+    <% if @review.user == current_user %>
+      <%= link_to [@review, comment], method: :delete, remote: true do %>
+      <i class="glyphicon glyphicon-remove"></i>
+      <% end %>       
+    <% end %>
+  </div>
+<% end %>
+
+<%= form_for([@review, @review.comments.build]) do |f| %> 
+  <br>
+  <div class="form-group">
+    <%= f.text_area :comment, :class => 'form-control comment-input-box', data: { behavior: 'autocomplete' } %>
+  </div> 
+  <div class="submit-comment">
+    <%= f.submit 'Submit', :class => 'btn btn-main' %> 
+  </div>
+  <a id="last-comment"></a>
+<% end %> 

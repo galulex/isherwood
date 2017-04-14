@@ -1,0 +1,8 @@
+<div class="container" id="photos">
+      <div class="col-xs-12 col-md-8 col-md-offset-2">
+  <% @review.photos.each do |photo| %>
+    <%= image_tag photo.file_name.url, :class => "img-responsive" %>
+    <br>
+  <% end %>
+    </div>
+</div>

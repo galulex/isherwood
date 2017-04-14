@@ -1,12 +1,4 @@
 module ReviewsHelper
-
-    def render_review_conditionally
-        if @review.user == current_user 
-            render :partial => 'author'
-        else 
-            render :partial => 'reader'
-        end 
-    end
     
     def render_like_conditionally
         if user_signed_in?
