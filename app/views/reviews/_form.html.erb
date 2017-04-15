@@ -3,48 +3,53 @@
 
 <%= form_for(@review) do |f| %>
 
-  <div class="publish-nav">
-    <div class="container">
-      <div class="publish-review pull-right">
-        <%= button_tag(type: 'submit', class: "btn btn-main") do %>
-          Publish <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <% end %>
-      </div>
-      <div class="review-step pull-left">
-        <p>New Review</p>
-      </div>
-    </div>
-  </div>
-
-  <div class= "container">
-    <div class="field col-xs-12 col-md-8 col-md-offset-2">
-      <%= errors_for_reviews @review, :title %>
-      <%= f.text_area :title, class: 'p review-title', placeholder: "Add a title" %>
-    </div>
-    <div class="field col-xs-12 col-md-8 col-md-offset-2">
-      <%= errors_for_reviews @review, :description %>
-      <%= f.text_area :description, class: 'p review-input', placeholder: "Write your review..." %>
-    </div>
-
-    <div class="field col-xs-12 col-md-8 col-md-offset-2">
-      <%= errors_for_reviews @review, :brand_id %>    
-      <%= f.collection_select(:brand_id, Brand.all, :id, :label, { prompt: 'Select a Brand', selected: @review.brand_id}, { class: 'brand-autocomplete' }) %>
-    </div>
-
-    <div class="field col-xs-12 col-md-8 col-md-offset-2">
-      <%= errors_for_reviews @review, :category_id %>  
-      <%= f.collection_select(:category_id, Category.all, :id, :item_type, { prompt: 'Select a Category', selected: @review.category_id}, { class: 'brand-autocomplete' }) %>
-    </div>
-
-    <%= f.fields_for :photos do |photo| %>
-      <%= render 'photo_fields', f: photo, visible: true %>
-    <% end %>
-    
-    <div class="field col-xs-12 col-md-8 col-md-offset-2 add-photo-button">
-    <%= errors_for_reviews @review, :photos %>  
-      <%= link_to_add_association f, :photos, data: { new_photo: true }, class: "#{'hidden' if @review.photos.size > 4} btn btn-lake" do %>
-        <i class="glyphicon glyphicon-camera"></i>
+<div class="publish-nav">
+  <div class="container">
+    <div class="publish-review pull-right">
+      <%= button_tag(type: 'submit', class: "btn btn-main") do %>
+      Publish <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <% end %>
     </div>
+    <div class="review-step pull-left">
+      <% if action_name == "new" %>
+      <p>New Review</p>
+      <% elsif action_name == "edit" %>
+      <p>Edit Review</p>
+      <% end %>
     </div>
+  </div>
+</div>
+
+<div class= "container review-show-padding">
+  <div class="field col-xs-12 col-md-8 col-md-offset-2">
+    <%= errors_for_reviews @review, :title %>
+    <%= f.text_area :title, class: 'h1 review-title', placeholder: "Add a title" %>
+  </div>
+  
+  <div class="field col-xs-12 col-md-8 col-md-offset-2">
+    <%= errors_for_reviews @review, :description %>
+    <%= f.text_area :description, class: 'p review-input', placeholder: "Write your review..." %>
+  </div>
+
+  <div class="field col-xs-12 col-md-8 col-md-offset-2">
+    <%= errors_for_reviews @review, :brand_id %>    
+    <%= f.collection_select(:brand_id, Brand.all, :id, :label, { prompt: 'Select a Brand', selected: @review.brand_id}, { class: 'brand-autocomplete' }) %>
+  </div>
+
+  <div class="field col-xs-12 col-md-8 col-md-offset-2">
+    <%= errors_for_reviews @review, :category_id %>  
+    <%= f.collection_select(:category_id, Category.all, :id, :item_type, { prompt: 'Select a Category', selected: @review.category_id}, { class: 'brand-autocomplete' }) %>
+  </div>
+
+  <%= f.fields_for :photos do |photo| %>
+    <%= render 'photo_fields', f: photo, visible: true %>
+  <% end %>
+  
+  <div class="field col-xs-12 col-md-8 col-md-offset-2 add-photo-button">
+    <%= errors_for_reviews @review, :photos %>  
+    <%= link_to_add_association f, :photos, data: { new_photo: true }, class: "#{'hidden' if @review.photos.size > 4} btn btn-lake" do %>
+    <i class="glyphicon glyphicon-camera"></i>
     <% end %>
+  </div>
+</div>
+<% end %>
