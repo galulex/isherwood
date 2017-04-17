@@ -43,11 +43,12 @@ class ReviewsController < ApplicationController
   def new
     @review = Review.new
     authorize @review
+    @all_categories = Category.where(id: [1001, 1002, 1003, 1004, 1005, 2002, 2003, 2004, 2005, 2006])
   end
 
   # GET /reviews/1/edit
   def edit
-    @review = Review.find(params[:id])
+    @review = Review.friendly.find(params[:id])
   end
 
   def create
@@ -99,5 +100,11 @@ class ReviewsController < ApplicationController
   def comment_params
     params.permit(:comment)
   end
+  
+  before_filter :set_category
+  def set_category
+  @all_categories = Category.where(id: [1001, 1002, 1003, 1004, 1005, 2002, 2003, 2004, 2005, 2006])
+  end
+  
 end
 

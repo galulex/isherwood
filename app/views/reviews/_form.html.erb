@@ -37,8 +37,22 @@
   </div>
 
   <div class="field col-xs-12 col-md-8 col-md-offset-2">
-    <%= errors_for_reviews @review, :category_id %>  
-    <%= f.collection_select(:category_id, Category.all, :id, :item_type, { prompt: 'Select a Category', selected: @review.category_id}, { class: 'brand-autocomplete' }) %>
+  <%= errors_for_reviews @review, :category_id %>  
+    <select class="brand-autocomplete" name="review[category_id]" id="review_category_id">
+      <% if @review.category.item_type.present? %>
+        <option selected="selected" value="<%= @review.category_id %>"><%= @review.category.item_type %></option>
+      <% else %>
+        <option value="">Select a Category</option>
+      <% end %>
+      
+      <% @all_categories.each do |cat| %>
+      <optgroup label="<%= cat.item_type %>">
+        <% cat.children.each do |child| %>
+        <option value="<%= child.id %>"><%= child.item_type %></option>
+        <% end %>
+      </optgroup>
+      <% end %>
+    </select>
   </div>
 
   <%= f.fields_for :photos do |photo| %>
