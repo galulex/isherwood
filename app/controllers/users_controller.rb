@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
   def show
     @user = User.friendly.find(params[:friendly_id])
-    @reviews = @user.reviews
+    @reviews = @user.reviews.page(params[:page]).per(15)
   end
 
   def new
     @user = User.new
-    @user.avatars.build 
+    @user.avatars.build
   end
 
   def index
@@ -40,10 +40,10 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:avatar, :avatar_cache)
   end
-  
+
   def set_user
     @user = User.friendly.find(params[:id])
   end
-  
-  
+
+
 end

@@ -6,7 +6,7 @@
       <%= image_tag @user.avatar.url, :class => "profile-avatar"%>
       <h1><%= @user.first_name %> <%= @user.last_name %></h1>
       <p><%= @user.about %></p>
-      
+
       <%= link_to followings_path do %>
        <strong><%= @user.follow_count %></strong> Following
       <% end %>
@@ -14,10 +14,11 @@
       <%= link_to followers_path do %>
       <strong><%= @user.followers_count %></strong> Followers
       <% end %>
-      
+
       <%= render_follow_conditionally %>
     </div>
   </div>
 </div>
 
-<%= render "reviews/card", reviews: @user.reviews %>
+<%= render "reviews/card", reviews: @reviews %>
+<%= paginate @reviews %>
