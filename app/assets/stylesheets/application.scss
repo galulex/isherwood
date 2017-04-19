@@ -5,10 +5,8 @@
 @import "navbar";
 @import "buttons";
 @import "photos";
-@import "masonry/fluid";
 @import "jquery.atwho";
 @import "avatars";
-
 
 // adjust homepage See All button margins
 
@@ -331,13 +329,12 @@ a:hover, a:focus, a:active {
     width: 30px;
     border-radius: 50%;
     display:inline;
-    vertical-align:middle;  
+    vertical-align:middle;
 }
 
-h6.written-by { 
+h6.written-by {
     display:inline;
     vertical-align: center;
-    padding-left: 10px; 
 }
 
 .card-review {

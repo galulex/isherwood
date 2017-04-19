@@ -1,27 +1,27 @@
 $( document ).on('turbolinks:load', function() {
-  $(function(){
-
-    var $container = $('#masonry-container');
-
-    $container.imagesLoaded(function(){
-      $container.masonry({
-        itemSelector: '.box',
-        columnWidth: '.box'
-      });
-    });
-
-    $container.infinitescroll({
-      navSelector  : 'nav.pagination',
-      nextSelector : 'nav.pagination a[rel=next]',
-      itemSelector : '.box'
-    },
-      function( newElements ) {
-        var $newElems = $( newElements ).css({ opacity: 0 });
-        $newElems.imagesLoaded(function(){
-          $newElems.animate({ opacity: 1 });
-          $container.masonry( 'appended', $newElems, true );
-        });
-      }
-    );
+  var $container = $('#masonry-container');
+  $container.masonry({
+    itemSelector: '.box',
+    isAnimated: true
   });
+
+  $container.infinitescroll({
+    navSelector  : 'nav.pagination',
+    nextSelector : 'nav.pagination a[rel=next]',
+    itemSelector : '.box',
+    bufferPx     : 250,
+    speed: 0
+  },
+    function( newElements ) {
+      var $newElems = $( newElements );
+      $container.masonry( 'appended', $newElems );
+    }
+  );
 })
+
+$(window).resize(function() {
+  $('#masonry-container').masonry({
+    itemSelector: '.box',
+    isAnimated: true
+  }, 'reload');
+});

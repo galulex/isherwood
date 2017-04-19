@@ -21,7 +21,6 @@ gem "acts_as_follower"
 gem 'acts_as_commentable'
 gem 'acts_as_tree'
 gem 'cocoon'
-gem 'masonry-rails'
 gem 'jquery-atwho-rails'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'searchkick'
