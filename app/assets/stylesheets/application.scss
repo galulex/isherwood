@@ -10,6 +10,17 @@
 
 // adjust homepage See All button margins
 
+#infscr-loading {
+  z-index: 100;
+  position: fixed;
+  left: 50%;
+  bottom: 40px;
+
+  img, div em {
+    display: none !important;
+  }
+}
+
 .movebutton {
     margin-top:15px;
 }

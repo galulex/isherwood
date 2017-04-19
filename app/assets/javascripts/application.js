@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require masonry.js
 //= require jquery.infinitescroll.js
+//= require spin.js
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require selectize

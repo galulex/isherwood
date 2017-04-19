@@ -1,5 +1,6 @@
 $( document ).on('turbolinks:load', function() {
   var $container = $('#masonry-container');
+
   $container.masonry({
     itemSelector: '.box',
     isAnimated: true
@@ -10,9 +11,11 @@ $( document ).on('turbolinks:load', function() {
     nextSelector : 'nav.pagination a[rel=next]',
     itemSelector : '.box',
     bufferPx     : 250,
-    speed: 0
+    speed        : 0
   },
     function( newElements ) {
+      var target = document.getElementById('infscr-loading');
+      var spinner = new Spinner({lines: 12, radius: 15, color: "#000"}).spin(target);
       var $newElems = $( newElements );
       $container.masonry( 'appended', $newElems );
     }
