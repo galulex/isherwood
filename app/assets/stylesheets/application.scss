@@ -12,13 +12,17 @@
 
 #infscr-loading {
   z-index: 100;
-  position: fixed;
+  position: absolute;
   left: 50%;
-  bottom: 40px;
+  bottom: -10px;
 
   img, div em {
     display: none !important;
   }
+}
+
+.pagination {
+  display: none;
 }
 
 .movebutton {
