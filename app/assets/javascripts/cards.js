@@ -1,5 +1,5 @@
 $( document ).on('turbolinks:load', function() {
-  var $container = $('#masonry-container');
+  var $container = $('.masonry-container');
 
   $container.imagesLoaded( function() {
     $container.masonry({
@@ -26,7 +26,7 @@ $( document ).on('turbolinks:load', function() {
 })
 
 $(window).resize(function() {
-  $('#masonry-container').masonry({
+  $('.masonry-container').masonry({
     itemSelector: '.box',
     isAnimated: true
   }, 'reload');
